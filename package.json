@@ -1,0 +1,17 @@
+{
+  "name": "my-theme",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack --mode production",
+    "watch": "webpack --mode development --watch",
+    "scss": "sass src/scss/:wp-content/themes/my-theme/common/css --no-source-map --style=compressed",
+    "scss:watch": "sass src/scss/:wp-content/themes/my-theme/common/css --watch"
+  },
+  "devDependencies": {
+    "dotenv": "^16.1.4",
+    "sass": "^1.63.3",
+    "webpack-cli": "^5.1.4"
+  }
+}
