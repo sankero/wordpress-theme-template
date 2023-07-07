@@ -1,11 +1,10 @@
 version: "3"
 services:
   db:
-    image: mysql:5.7
+    image: mysql:latest
     volumes:
       - db:/var/lib/mysql
       - ./db/mysql.dump.sql:/docker-entrypoint-initdb.d/install_wordpress.sql
-    restart: always
     environment:
       MYSQL_ROOT_PASSWORD: somewordpress
       MYSQL_DATABASE: wordpress
@@ -17,13 +16,12 @@ services:
     image: wordpress:latest
     ports:
       - "${PORTS}"
-    restart: always
     environment:
       WORDPRESS_DB_HOST: db:3306
       WORDPRESS_DB_USER: wordpress
       WORDPRESS_DB_PASSWORD: wordpress
     volumes:
-      - ./wp-content/themes/${THEMES_DIR}:/var/www/html/wp-content/themes/${THEMES_DIR}
+      - ./wp-content/themes/${THEME_DIR}:/var/www/html/wp-content/themes/${THEME_DIR}
       - ./wp-content/plugins:/var/www/html/wp-content/plugins
       - ./wp-content/uploads:/var/www/html/wp-content/uploads
 volumes:
