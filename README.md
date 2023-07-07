@@ -37,12 +37,6 @@ docker-compose up -d --build
 - http://localhost:8000/
 - http://localhost:8000/wp-admin/
 
-```
-id: admin
-pw: password
-mail: test@example.com
-```
-
 ### docker停止
 
 通常は`docker-compose down`で終了しますが、`--volumes`オプションを付けるとDBを削除できます。
