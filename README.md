@@ -83,6 +83,15 @@ npm install
 css, jsはwebpackを使用できます。
 
 ### スタイルシート（StyleSheets）
+テーマディレクトリ名を変更している場合はpackage.jsonファイルのscssコマンドパスを修正してください。
+
+```
+  "scripts": {
+    "scss": "sass src/scss/:wp-content/themes/my-theme/common/css --no-source-map --style=compressed",
+    "scss:watch": "sass src/scss/:wp-content/themes/my-theme/common/css --watch"
+  }
+```
+
 SCSSをビルドする際は、以下のコマンドを実行してください。
 
 ```
